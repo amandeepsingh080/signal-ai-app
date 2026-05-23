@@ -1,3 +1,26 @@
+let menuOpen = false
+
+function openMenu(){
+
+let sidebar =
+document.getElementById("sidebar")
+
+if(menuOpen){
+
+sidebar.style.left = "-280px"
+
+menuOpen = false
+
+}else{
+
+sidebar.style.left = "0"
+
+menuOpen = true
+
+}
+
+}
+
 function generateSignal(){
 
  document.getElementById("aiLoader")
