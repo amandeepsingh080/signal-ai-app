@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SIGNAL AI</title>
+
+<link rel="stylesheet" href="style.css?v=2">
+
+</head>
+
 <body>
 
 <div class="container">
@@ -8,8 +21,7 @@
 Select OTC Pair
 </p>
 
-</script>
-<select size="15">
+<select id="pairSelect" size="15">
 
 <option>EUR/USD OTC</option>
 <option>GBP/USD OTC</option>
@@ -66,7 +78,7 @@ Select OTC Pair
 </select>
 
 <button onclick="generateSignal()">
-GET SIGNAL
+🚀 GET SIGNAL
 </button>
 
 <div class="signal-box">
@@ -74,6 +86,8 @@ GET SIGNAL
 <h2 id="signalText">
 WAITING...
 </h2>
+
+<p id="pairText"></p>
 
 <p id="confidenceText"></p>
 
@@ -95,19 +109,27 @@ signals[Math.floor(Math.random()*signals.length)]
 let confidence =
 Math.floor(Math.random()*15)+80
 
+let pair =
+document.getElementById("pairSelect").value
+
 document.getElementById("signalText")
 .innerHTML = signal
 
+document.getElementById("pairText")
+.innerHTML =
+"PAIR: " + pair
+
 document.getElementById("confidenceText")
 .innerHTML =
-"Confidence: " + confidence + "%"
+"CONFIDENCE: " + confidence + "%"
 
 document.getElementById("expiryText")
 .innerHTML =
-"Expiry: 1 Minute"
+"EXPIRY: 1 Minute"
 
 }
 
 </script>
 
 </body>
+</html>
