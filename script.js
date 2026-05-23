@@ -106,6 +106,29 @@ document.getElementById("expiryText")
 
 loading.innerHTML = ""
 
+ setTimeout(()=>{
+
+let results =
+["✅ SIGNAL WON","❌ SIGNAL LOST"]
+
+let randomResult =
+results[Math.floor(Math.random()*results.length)]
+
+document.getElementById("popupResult")
+.innerHTML = randomResult
+
+document.getElementById("resultPopup")
+.style.display = "flex"
+
+setTimeout(()=>{
+
+document.getElementById("resultPopup")
+.style.display = "none"
+
+},2500)
+
+},60000)
+
  document.getElementById("aiLoader")
 .style.display = "none"
 
