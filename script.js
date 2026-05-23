@@ -98,8 +98,12 @@ document.getElementById("pairText")
 
 document.getElementById("confidenceText")
 .innerHTML =
-"CONFIDENCE: " + confidence + "%"
+confidence + "%"
 
+document.getElementById("progressFill")
+.style.width =
+confidence + "%"
+ 
 document.getElementById("expiryText")
 .innerHTML =
 "EXPIRY: 1 Minute"
