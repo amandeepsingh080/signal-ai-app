@@ -126,3 +126,11 @@ box-shadow:0 0 35px rgba(56,189,248,0.4);
     color:#cbd5e1;
     margin-top:10px;
 }
+
+#signalBtn{
+transition:0.2s;
+}
+
+#signalBtn:active{
+transform:scale(0.96);
+}
