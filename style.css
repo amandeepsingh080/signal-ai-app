@@ -71,3 +71,9 @@ margin-bottom:15px;
 font-size:20px;
 color:#d4d9e3;
 }
+
+#loadingText{
+    margin-top:15px;
+    font-size:20px;
+    color:#38bdf8;
+}
