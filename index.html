@@ -1,27 +1,12 @@
-<script>
+<body>
 
-function generateSignal(){
+<div class="container">
 
-let signals = ["🟢 CALL","🔴 PUT"]
+<h1>🚀 SIGNAL AI</h1>
 
-let randomSignal =
-signals[Math.floor(Math.random()*signals.length)]
-
-let confidence =
-Math.floor(Math.random()*15)+80
-
-document.getElementById("signalText")
-.innerHTML = randomSignal
-
-document.getElementById("confidenceText")
-.innerHTML =
-"Confidence: " + confidence + "%"
-
-document.getElementById("expiryText")
-.innerHTML =
-"Expiry: 1 Minute"
-
-}
+<p class="sub">
+Select OTC Pair
+</p>
 
 </script>
 <select size="15">
@@ -81,15 +66,48 @@ document.getElementById("expiryText")
 </select>
 
 <button onclick="generateSignal()">
-🚀 GET SIGNAL
+GET SIGNAL
 </button>
 
-<div class="signal-box" id="signalBox">
+<div class="signal-box">
 
-<h2 id="signalText">WAITING...</h2>
+<h2 id="signalText">
+WAITING...
+</h2>
 
 <p id="confidenceText"></p>
 
 <p id="expiryText"></p>
 
 </div>
+
+</div>
+
+<script>
+
+function generateSignal(){
+
+let signals = ["🟢 CALL","🔴 PUT"]
+
+let signal =
+signals[Math.floor(Math.random()*signals.length)]
+
+let confidence =
+Math.floor(Math.random()*15)+80
+
+document.getElementById("signalText")
+.innerHTML = signal
+
+document.getElementById("confidenceText")
+.innerHTML =
+"Confidence: " + confidence + "%"
+
+document.getElementById("expiryText")
+.innerHTML =
+"Expiry: 1 Minute"
+
+}
+
+</script>
+
+</body>
