@@ -29,7 +29,7 @@ return
 
 if(isNaN(quotexid)){
 
-alert("Quotex ID must be numbers only")
+alert("Quotex ID numbers only")
 return
 
 }
@@ -42,10 +42,6 @@ return
 }
 
 localStorage.setItem("loggedIn","true")
-
-localStorage.setItem("username",username)
-
-localStorage.setItem("quotexid",quotexid)
 
 document.getElementById("loginScreen")
 .style.display = "none"
