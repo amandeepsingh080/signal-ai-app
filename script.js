@@ -237,3 +237,20 @@ document.querySelector(".signal-box")
 },4000)
 
 }
+
+function showTab(tab){
+
+alert(tab + " Opened 🚀")
+
+let sidebar =
+document.getElementById("sidebar")
+
+if(sidebar){
+
+sidebar.style.left = "-280px"
+
+menuOpen = false
+
+}
+
+}
