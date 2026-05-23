@@ -194,8 +194,6 @@ document.querySelector(".signal-box")
 
 },4000)
 
-}
-
 function showTab(tab){
 
 console.log(tab)
