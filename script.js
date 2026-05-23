@@ -1,5 +1,11 @@
 function generateSignal(){
 
+if(navigator.vibrate){
+
+navigator.vibrate(200)
+
+}
+
 let pair =
 document.getElementById("pairSelect").value
 
