@@ -1,18 +1,51 @@
+window.onload = function(){
+
+let loggedIn =
+localStorage.getItem("loggedIn")
+
+if(loggedIn === "true"){
+
+document.getElementById("loginScreen")
+.style.display = "none"
+
+}
+
+}
+
 function loginApp(){
 
 let username =
-document.getElementById("username").value
+document.getElementById("username").value.trim()
 
 let quotexid =
-document.getElementById("quotexid").value
+document.getElementById("quotexid").value.trim()
 
-if(username == "" || quotexid == ""){
+if(username === "" || quotexid === ""){
 
-alert("Please Fill All Details")
-
+alert("Fill all details")
 return
 
 }
+
+if(isNaN(quotexid)){
+
+alert("Quotex ID must be numbers only")
+return
+
+}
+
+if(quotexid.length < 6){
+
+alert("Invalid Quotex ID")
+return
+
+}
+
+localStorage.setItem("loggedIn","true")
+
+localStorage.setItem("username",username)
+
+localStorage.setItem("quotexid",quotexid)
 
 document.getElementById("loginScreen")
 .style.display = "none"
@@ -240,7 +273,7 @@ document.querySelector(".signal-box")
 
 function showTab(tab){
 
-alert(tab + " Opened 🚀")
+console.log(tab + " opened")
 
 let sidebar =
 document.getElementById("sidebar")
