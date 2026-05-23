@@ -76,6 +76,13 @@ document.getElementById("expiryText")
 
 loading.innerHTML = ""
 
+  let history =
+document.getElementById("historyList")
+
+history.innerHTML += `
+<p>${signal} — ${pair}</p>
+`
+
   let timeLeft = 60
 
 document.getElementById("timerText")
