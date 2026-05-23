@@ -77,88 +77,15 @@ menuOpen = true
 
 function generateSignal(){
 
- document.getElementById("aiLoader")
-.style.display = "flex"
+document.getElementById("loadingBox")
+.style.display = "block"
 
-let aiStep =
-document.getElementById("aiStep")
-
-aiStep.innerHTML =
-"Checking RSI..."
-
-setTimeout(()=>{
-
-aiStep.innerHTML =
-"Confirming Trend..."
-
-},1000)
-
-setTimeout(()=>{
-
-aiStep.innerHTML =
-"Scanning Candles..."
-
-},2000)
-
-setTimeout(()=>{
-
-aiStep.innerHTML =
-"Generating AI Signal..."
-
-},3000)
-
-if(navigator.vibrate){
-
-navigator.vibrate(200)
-
-}
-
-let pair =
-document.getElementById("pairSelect").value
-
-let loading =
-document.getElementById("loadingText")
-
-loading.innerHTML =
-"🤖 Analyzing Market..."
-
-document.getElementById("signalText")
-.innerHTML = "⌛ WAIT..."
-
-document.getElementById("pairText")
-.innerHTML = ""
-
-document.getElementById("confidenceText")
-.innerHTML = ""
-
-document.getElementById("expiryText")
-.innerHTML = ""
+document.querySelector(".signal-box")
+.style.display = "none"
 
 setTimeout(() => {
 
-loading.innerHTML =
-"📊 Checking RSI..."
-
-},1000)
-
-setTimeout(() => {
-
-loading.innerHTML =
-"📈 Confirming Trend..."
-
-},2000)
-
-setTimeout(() => {
-
-loading.innerHTML =
-"🚀 Generating Signal..."
-
-},3000)
-
-setTimeout(() => {
-
-let signals =
-["🟢 CALL","🔴 PUT"]
+let signals = ["🟢 CALL","🔴 PUT"]
 
 let signal =
 signals[Math.floor(Math.random()*signals.length)]
@@ -169,21 +96,23 @@ Math.floor(Math.random()*15)+80
 document.getElementById("signalText")
 .innerHTML = signal
 
-document.getElementById("pairText")
-.innerHTML =
-"PAIR: " + pair
-
 document.getElementById("confidenceText")
 .innerHTML =
-confidence + "%"
+"Confidence: " + confidence + "%"
 
-document.getElementById("progressFill")
-.style.width =
-confidence + "%"
- 
 document.getElementById("expiryText")
 .innerHTML =
-"EXPIRY: 1 Minute"
+"Expiry: 1 Minute"
+
+document.getElementById("loadingBox")
+.style.display = "none"
+
+document.querySelector(".signal-box")
+.style.display = "block"
+
+},2000)
+
+}
 
 loading.innerHTML = ""
 
