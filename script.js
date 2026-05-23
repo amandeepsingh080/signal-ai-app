@@ -11,6 +11,14 @@ document.getElementById("loginScreen")
 document.getElementById("mainApp")
 .style.display = "block"
 
+document.getElementById("profileName")
+.innerHTML =
+localStorage.getItem("username")
+
+document.getElementById("profileId")
+.innerHTML =
+localStorage.getItem("quotexid")
+  
 }
 
 }
@@ -45,6 +53,10 @@ return
 }
 
 localStorage.setItem("loggedIn","true")
+
+localStorage.setItem("username",username)
+
+localStorage.setItem("quotexid",quotexid) 
 
 document.getElementById("loginScreen")
 .style.display = "none"
@@ -164,8 +176,12 @@ behavior:"smooth"
 
 if(tab === "Profile"){
 
-alert("👤 PROFILE SECTION COMING SOON 🚀")
+document.querySelector(".profile-box")
+.scrollIntoView({
+behavior:"smooth"
+})
 
+}
 }
 
 if(tab === "VIP"){
