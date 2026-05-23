@@ -1,5 +1,35 @@
 function generateSignal(){
 
+ document.getElementById("aiLoader")
+.style.display = "flex"
+
+let aiStep =
+document.getElementById("aiStep")
+
+aiStep.innerHTML =
+"Checking RSI..."
+
+setTimeout(()=>{
+
+aiStep.innerHTML =
+"Confirming Trend..."
+
+},1000)
+
+setTimeout(()=>{
+
+aiStep.innerHTML =
+"Scanning Candles..."
+
+},2000)
+
+setTimeout(()=>{
+
+aiStep.innerHTML =
+"Generating AI Signal..."
+
+},3000)
+
 if(navigator.vibrate){
 
 navigator.vibrate(200)
@@ -75,6 +105,9 @@ document.getElementById("expiryText")
 "EXPIRY: 1 Minute"
 
 loading.innerHTML = ""
+
+ document.getElementById("aiLoader")
+.style.display = "none"
 
  let toast =
 document.getElementById("toast")
