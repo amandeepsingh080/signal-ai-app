@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>SIGNAL AI</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="style.css">
 
 </head>
 
 <body>
 
+<!-- LOGIN SCREEN -->
+
 <div id="loginScreen">
 
 <div class="login-box">
 
-<h1>
-🚀 SIGNAL AI
-</h1>
+<h1>🚀 SIGNAL AI</h1>
 
-<p>
-LOGIN WITH QUOTEX ID
-</p>
+<p>LOGIN WITH QUOTEX ID</p>
 
 <input
 type="text"
@@ -45,156 +46,65 @@ LOGIN 🚀
 </div>
 
 </div>
- 
- <div id="resultPopup">
 
-<div class="popup-box">
+<!-- MAIN APP -->
 
-<h1 id="popupResult">
-✅ SIGNAL WON
-</h1>
-
-<p>
-AI TRADE COMPLETED
-</p>
-
-</div>
-
-</div>
-
- <div id="aiLoader">
-
-<div class="loader-box">
-
-<div class="ai-circle">
-🤖
-</div>
-
-<h2>
-AI ANALYZING...
-</h2>
-
-<p id="aiStep">
-Checking Market...
-</p>
-
-</div>
-
-</div> 
-
-<div id="toast">
-
-🚀 SIGNAL GENERATED
-
-</div>
-  
 <div class="container"
 id="mainApp"
 style="display:none;">
 
-<div class="menu-btn" onclick="openMenu()">
+<!-- MENU -->
+
+<div class="menu-btn"
+onclick="openMenu()">
 ☰
 </div>
 
+<!-- SIDEBAR -->
+
 <div id="sidebar">
 
-<h2>
-🚀 SIGNAL AI
-</h2>
+<h2>🚀 SIGNAL AI</h2>
 
-<div class="menu-item" onclick="showTab('home')">
+<div class="menu-item"
+onclick="showTab('Home')">
 🏠 Home
 </div>
 
-<div class="menu-item" onclick="showTab('signals')">
-📊 AI Signals
+<div class="menu-item"
+onclick="showTab('Signals')">
+📊 Signals
 </div>
 
-<div class="menu-item" onclick="showTab('vip')">
-💎 VIP Access
+<div class="menu-item"
+onclick="showTab('VIP')">
+💎 VIP
 </div>
 
-<div class="menu-item" onclick="showTab('history')">
+<div class="menu-item"
+onclick="showTab('History')">
 📜 History
 </div>
 
-<div class="menu-item" onclick="showTab('profile')">
+<div class="menu-item"
+onclick="showTab('Profile')">
 👤 Profile
 </div>
- 
+
 </div>
 
-<p class="sub">
-Select OTC Pair
-</p>
+<!-- TITLE -->
 
-<div class="profit-card">
-
-<p>
-TODAY PROFIT
-</p>
-
-<h1 id="profitAmount">
-+$1,284.25
+<h1 class="title">
+🚀 SIGNAL AI
 </h1>
 
-<div class="profit-status">
-🟢 +12.4%
-</div>
-
-</div>
- 
-<div class="stats-row">
-
-<div class="mini-stat">
-<h2>128</h2>
-<p>SIGNALS</p>
-</div>
-
-<div class="mini-stat">
-<h2>91%</h2>
-<p>WIN RATE</p>
-</div>
-
-<div class="mini-stat">
-<h2>1.2K</h2>
-<p>ONLINE</p>
-</div>
-
-</div>
-  
-<div class="market-status">
-
-<div class="status-item">
-🟢 MARKET OPEN
-</div>
-
-<div class="status-item">
-⚡ HIGH VOLATILITY
-</div>
-
-<div class="status-item">
-📈 BULLISH TREND
-</div>
-
-</div>
-  
-<div class="stats-card">
-
-<div class="circle">
-
-<div class="inner-circle">
-92%
-</div>
-
-</div>
-
-<p class="win-text">
-TODAY WIN RATE
+<p class="sub">
+SELECT OTC PAIR
 </p>
 
-</div>
-  
+<!-- SELECT -->
+
 <select id="pairSelect" size="15">
 
 <option>EUR/USD OTC</option>
@@ -251,41 +161,21 @@ TODAY WIN RATE
 
 </select>
 
-<button id="signalBtn" onclick="generateSignal()">
+<!-- BUTTON -->
+
+<button id="signalBtn"
+onclick="generateSignal()">
 🚀 GET SIGNAL
 </button>
 
-  <div class="chart-card">
-
-<div class="chart-header">
-
-<h3>📈 LIVE MARKET</h3>
-
-<p>EUR/USD OTC</p>
-
-</div>
-
-<div class="fake-chart">
-
-<div class="bar b1"></div>
-<div class="bar b2"></div>
-<div class="bar b3"></div>
-<div class="bar b4"></div>
-<div class="bar b5"></div>
-<div class="bar b6"></div>
-<div class="bar b7"></div>
-<div class="bar b8"></div>
-
-</div>
-
-</div>
+<!-- LOADING -->
 
 <div id="loadingBox">
 
 <div class="loader"></div>
 
 <h2>
-🤖 AI ANALYZING MARKET
+🤖 AI ANALYZING...
 </h2>
 
 <p>
@@ -293,71 +183,26 @@ Scanning OTC Data...
 </p>
 
 </div>
- 
+
+<!-- SIGNAL BOX -->
+
 <div class="signal-box">
 
-<div class="signal-top">
-
-<div class="pair-badge" id="pairText">
-EUR/USD OTC
-</div>
-
-<div class="signal-badge" id="signalText">
-🟢 CALL
-</div>
-
-</div>
-
-<div class="confidence-area">
-
-<div class="confidence-label">
-AI CONFIDENCE
-</div>
-
-<div class="progress">
-
-<div class="progress-fill" id="progressFill">
-
-</div>
-
-</div>
-
-<h2 id="confidenceText">
-91%
+<h2 id="signalText">
+WAITING...
 </h2>
 
-</div>
-
-<div class="extra-stats">
-
-<div class="stat-card">
-⏰
-<p>1 MIN</p>
-</div>
-
-<div class="stat-card">
-📈
-<p>BULLISH</p>
-</div>
-
-<div class="stat-card">
-🤖
-<p>AI READY</p>
-</div>
-
-</div>
-
-<p id="expiryText">
-EXPIRY: 1 Minute
+<p id="confidenceText">
+Confidence: 91%
 </p>
 
-<p id="timerText"></p>
-
-<div id="loadingText"></div>
+<p id="expiryText">
+Expiry: 1 Minute
+</p>
 
 </div>
- 
-</div>
+
+<!-- LIVE FEED -->
 
 <div class="live-feed">
 
@@ -382,7 +227,9 @@ EXPIRY: 1 Minute
 </div>
 
 </div>
- 
+
+<!-- HISTORY -->
+
 <div class="history-box">
 
 <h3>
@@ -396,38 +243,41 @@ EXPIRY: 1 Minute
 </div>
 
 </div>
-  
-<script src="script.js"></script>
+
+<!-- NAVBAR -->
 
 <div class="navbar">
 
-<div class="navbar">
-
-<div class="nav-item active" onclick="showTab('home')">
+<div class="nav-item"
+onclick="showTab('Home')">
 🏠
 <p>Home</p>
 </div>
 
-<div class="nav-item" onclick="showTab('signals')">
+<div class="nav-item"
+onclick="showTab('Signals')">
 📊
 <p>Signals</p>
 </div>
 
-<div class="nav-item" onclick="showTab('history')">
+<div class="nav-item"
+onclick="showTab('History')">
 📜
 <p>History</p>
 </div>
 
-<div class="nav-item" onclick="showTab('profile')">
+<div class="nav-item"
+onclick="showTab('Profile')">
 👤
 <p>Profile</p>
 </div>
 
 </div>
- 
+
 </div>
-  
+
 <script src="script.js"></script>
 
 </body>
+
 </html>
