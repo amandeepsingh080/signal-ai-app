@@ -782,3 +782,46 @@ font-size:18px;
 font-weight:bold;
 cursor:pointer;
 }
+
+#loadingBox{
+display:none;
+margin-top:25px;
+background:#081427;
+padding:30px;
+border-radius:25px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.06);
+}
+
+.loader{
+width:70px;
+height:70px;
+border:6px solid rgba(255,255,255,0.08);
+border-top:6px solid #38bdf8;
+border-radius:50%;
+margin:auto;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+
+0%{
+transform:rotate(0deg);
+}
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+#loadingBox h2{
+margin-top:20px;
+font-size:22px;
+color:#38bdf8;
+}
+
+#loadingBox p{
+color:#94a3b8;
+margin-top:10px;
+}
