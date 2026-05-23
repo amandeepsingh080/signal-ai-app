@@ -8,6 +8,9 @@ if(loggedIn === "true"){
 document.getElementById("loginScreen")
 .style.display = "none"
 
+ document.getElementById("mainApp")
+.style.display = "block"
+ 
 }
 
 }
@@ -46,6 +49,8 @@ localStorage.setItem("loggedIn","true")
 document.getElementById("loginScreen")
 .style.display = "none"
 
+document.getElementById("mainApp")
+.style.display = "block"
 }
 
 let menuOpen = false
