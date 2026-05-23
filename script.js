@@ -76,6 +76,32 @@ document.getElementById("expiryText")
 
 loading.innerHTML = ""
 
+  let timeLeft = 60
+
+document.getElementById("timerText")
+.innerHTML =
+"NEXT SIGNAL IN: 60s"
+
+let countdown = setInterval(() => {
+
+timeLeft--
+
+document.getElementById("timerText")
+.innerHTML =
+"NEXT SIGNAL IN: " + timeLeft + "s"
+
+if(timeLeft <= 0){
+
+clearInterval(countdown)
+
+document.getElementById("timerText")
+.innerHTML =
+"READY FOR NEXT SIGNAL 🚀"
+
+}
+
+},1000)
+
   document.querySelector(".signal-box")
 .style.transform = "scale(1.05)"
 
