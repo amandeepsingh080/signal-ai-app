@@ -1,17 +1,57 @@
-<script>
-
 function generateSignal(){
 
-let signals = ["🟢 CALL","🔴 PUT"]
+let pair =
+document.getElementById("pairSelect").value
+
+let loading =
+document.getElementById("loadingText")
+
+loading.innerHTML =
+"🤖 Analyzing Market..."
+
+document.getElementById("signalText")
+.innerHTML = "⌛ WAIT..."
+
+document.getElementById("pairText")
+.innerHTML = ""
+
+document.getElementById("confidenceText")
+.innerHTML = ""
+
+document.getElementById("expiryText")
+.innerHTML = ""
+
+setTimeout(() => {
+
+loading.innerHTML =
+"📊 Checking RSI..."
+
+},1000)
+
+setTimeout(() => {
+
+loading.innerHTML =
+"📈 Confirming Trend..."
+
+},2000)
+
+setTimeout(() => {
+
+loading.innerHTML =
+"🚀 Generating Signal..."
+
+},3000)
+
+setTimeout(() => {
+
+let signals =
+["🟢 CALL","🔴 PUT"]
 
 let signal =
 signals[Math.floor(Math.random()*signals.length)]
 
 let confidence =
 Math.floor(Math.random()*15)+80
-
-let pair =
-document.getElementById("pairSelect").value
 
 document.getElementById("signalText")
 .innerHTML = signal
@@ -28,6 +68,8 @@ document.getElementById("expiryText")
 .innerHTML =
 "EXPIRY: 1 Minute"
 
-}
+loading.innerHTML = ""
 
-</script>
+},4000)
+
+}
