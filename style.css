@@ -523,3 +523,39 @@ color:#4ade80;
 font-weight:bold;
 font-size:16px;
 }
+
+.live-feed{
+margin-top:25px;
+background:#081427;
+padding:20px;
+border-radius:22px;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.live-feed h3{
+margin-top:0;
+margin-bottom:20px;
+color:#38bdf8;
+}
+
+.feed-item{
+background:rgba(255,255,255,0.05);
+padding:14px;
+border-radius:14px;
+margin-top:12px;
+font-size:16px;
+color:#e2e8f0;
+animation:fadeFeed 2s infinite alternate;
+}
+
+@keyframes fadeFeed{
+
+from{
+opacity:0.6;
+}
+
+to{
+opacity:1;
+}
+
+}
