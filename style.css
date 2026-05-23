@@ -364,3 +364,67 @@ margin-top:8px;
 font-size:13px;
 color:#cbd5e1;
 }
+
+.chart-card{
+margin-top:25px;
+background:#081427;
+padding:20px;
+border-radius:22px;
+border:1px solid rgba(255,255,255,0.08);
+}
+
+.chart-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.chart-header h3{
+margin:0;
+color:#38bdf8;
+}
+
+.chart-header p{
+margin:0;
+color:#cbd5e1;
+}
+
+.fake-chart{
+display:flex;
+align-items:flex-end;
+gap:10px;
+height:140px;
+}
+
+.bar{
+flex:1;
+border-radius:10px 10px 0 0;
+background:linear-gradient(
+180deg,
+#38bdf8,
+#2563eb
+);
+animation:pulse 1.5s infinite alternate;
+}
+
+.b1{height:30%;}
+.b2{height:60%;}
+.b3{height:40%;}
+.b4{height:85%;}
+.b5{height:55%;}
+.b6{height:95%;}
+.b7{height:70%;}
+.b8{height:100%;}
+
+@keyframes pulse{
+
+from{
+opacity:0.5;
+}
+
+to{
+opacity:1;
+}
+
+}
