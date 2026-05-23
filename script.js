@@ -70,6 +70,16 @@ document.getElementById("expiryText")
 
 loading.innerHTML = ""
 
+  document.querySelector(".signal-box")
+.style.transform = "scale(1.05)"
+
+setTimeout(() => {
+
+document.querySelector(".signal-box")
+.style.transform = "scale(1)"
+
+},300)
+
 },4000)
 
 }
