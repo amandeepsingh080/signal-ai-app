@@ -128,8 +128,6 @@ document.querySelector(".signal-box")
 
 function showTab(tab){
 
-console.log(tab)
-
 let sidebar =
 document.getElementById("sidebar")
 
@@ -137,6 +135,43 @@ sidebar.style.left = "-280px"
 
 menuOpen = false
 
-alert(tab + " Opened 🚀")
+if(tab === "Home"){
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+})
+
+}
+
+if(tab === "Signals"){
+
+document.getElementById("pairSelect")
+.scrollIntoView({
+behavior:"smooth"
+})
+
+}
+
+if(tab === "History"){
+
+document.querySelector(".history-box")
+.scrollIntoView({
+behavior:"smooth"
+})
+
+}
+
+if(tab === "Profile"){
+
+alert("👤 PROFILE SECTION COMING SOON 🚀")
+
+}
+
+if(tab === "VIP"){
+
+alert("💎 VIP ACCESS COMING SOON 🚀")
+
+}
 
 }
