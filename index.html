@@ -1,3 +1,29 @@
+<script>
+
+function generateSignal(){
+
+let signals = ["🟢 CALL","🔴 PUT"]
+
+let randomSignal =
+signals[Math.floor(Math.random()*signals.length)]
+
+let confidence =
+Math.floor(Math.random()*15)+80
+
+document.getElementById("signalText")
+.innerHTML = randomSignal
+
+document.getElementById("confidenceText")
+.innerHTML =
+"Confidence: " + confidence + "%"
+
+document.getElementById("expiryText")
+.innerHTML =
+"Expiry: 1 Minute"
+
+}
+
+</script>
 <select size="15">
 
 <option>EUR/USD OTC</option>
@@ -53,3 +79,17 @@
 <option>SOL/USD OTC</option>
 
 </select>
+
+<button onclick="generateSignal()">
+🚀 GET SIGNAL
+</button>
+
+<div class="signal-box" id="signalBox">
+
+<h2 id="signalText">WAITING...</h2>
+
+<p id="confidenceText"></p>
+
+<p id="expiryText"></p>
+
+</div>
