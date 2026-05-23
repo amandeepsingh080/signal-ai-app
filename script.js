@@ -202,17 +202,13 @@ document.querySelector(".signal-box")
 
 function showTab(tab){
 
-console.log(tab + " opened")
+console.log(tab)
 
 let sidebar =
 document.getElementById("sidebar")
 
-if(sidebar){
-
-sidebar.style.left = "-280px"
+sidebar.style.left = "-260px"
 
 menuOpen = false
-
-}
 
 }
