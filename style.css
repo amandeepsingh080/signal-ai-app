@@ -77,3 +77,52 @@ color:#d4d9e3;
     font-size:20px;
     color:#38bdf8;
 }
+
+.signal-box{
+    margin-top:25px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(56,189,248,0.25);
+    border-radius:25px;
+    padding:25px;
+    text-align:center;
+    backdrop-filter:blur(20px);
+    box-shadow:0 0 25px rgba(56,189,248,0.15);
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+
+from{
+box-shadow:0 0 15px rgba(56,189,248,0.15);
+}
+
+to{
+box-shadow:0 0 35px rgba(56,189,248,0.4);
+}
+
+}
+
+#signalText{
+    font-size:50px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+#pairText{
+    font-size:24px;
+    margin-top:15px;
+    color:#7dd3fc;
+}
+
+#confidenceText{
+    font-size:30px;
+    color:#4ade80;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+#expiryText{
+    font-size:22px;
+    color:#cbd5e1;
+    margin-top:10px;
+}
