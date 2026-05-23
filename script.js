@@ -1,3 +1,24 @@
+function loginApp(){
+
+let username =
+document.getElementById("username").value
+
+let quotexid =
+document.getElementById("quotexid").value
+
+if(username == "" || quotexid == ""){
+
+alert("Please Fill All Details")
+
+return
+
+}
+
+document.getElementById("loginScreen")
+.style.display = "none"
+
+}
+
 let menuOpen = false
 
 function openMenu(){
