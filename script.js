@@ -8,9 +8,9 @@ if(loggedIn === "true"){
 document.getElementById("loginScreen")
 .style.display = "none"
 
- document.getElementById("mainApp")
+document.getElementById("mainApp")
 .style.display = "block"
- 
+
 }
 
 }
@@ -51,6 +51,7 @@ document.getElementById("loginScreen")
 
 document.getElementById("mainApp")
 .style.display = "block"
+
 }
 
 let menuOpen = false
@@ -79,7 +80,7 @@ menuOpen = true
 function generateSignal(){
 
 document.getElementById("loadingBox")
-.style.display = "block"
+.style.display = "flex"
 
 document.querySelector(".signal-box")
 .style.display = "none"
@@ -111,83 +112,7 @@ document.getElementById("loadingBox")
 document.querySelector(".signal-box")
 .style.display = "block"
 
-},2000)
-
-}
-
-loading.innerHTML = ""
-
- setTimeout(()=>{
-
-let results =
-["✅ SIGNAL WON","❌ SIGNAL LOST"]
-
-let randomResult =
-results[Math.floor(Math.random()*results.length)]
-
-document.getElementById("popupResult")
-.innerHTML = randomResult
-
-document.getElementById("resultPopup")
-.style.display = "flex"
-
-setTimeout(()=>{
-
-document.getElementById("resultPopup")
-.style.display = "none"
-
-},2500)
-
-},60000)
-
- document.getElementById("aiLoader")
-.style.display = "none"
-
- let toast =
-document.getElementById("toast")
-
-toast.classList.add("show")
-
-setTimeout(()=>{
-
-toast.classList.remove("show")
-
-},2500) 
-
-  let history =
-document.getElementById("historyList")
-
-history.innerHTML += `
-<p>${signal} — ${pair}</p>
-`
-
-  let timeLeft = 60
-
-document.getElementById("timerText")
-.innerHTML =
-"NEXT SIGNAL IN: 60s"
-
-let countdown = setInterval(() => {
-
-timeLeft--
-
-document.getElementById("timerText")
-.innerHTML =
-"NEXT SIGNAL IN: " + timeLeft + "s"
-
-if(timeLeft <= 0){
-
-clearInterval(countdown)
-
-document.getElementById("timerText")
-.innerHTML =
-"READY FOR NEXT SIGNAL 🚀"
-
-}
-
-},1000)
-
-  document.querySelector(".signal-box")
+document.querySelector(".signal-box")
 .style.transform = "scale(1.05)"
 
 setTimeout(() => {
@@ -197,7 +122,9 @@ document.querySelector(".signal-box")
 
 },300)
 
-},4000)
+},2000)
+
+}
 
 function showTab(tab){
 
@@ -206,8 +133,10 @@ console.log(tab)
 let sidebar =
 document.getElementById("sidebar")
 
-sidebar.style.left = "-260px"
+sidebar.style.left = "-280px"
 
 menuOpen = false
+
+alert(tab + " Opened 🚀")
 
 }
