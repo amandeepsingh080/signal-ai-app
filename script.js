@@ -94,6 +94,8 @@ document.getElementById("profileId")
 
 }
 
+/* MENU */
+
 let menuOpen = false
 
 function openMenu(){
@@ -117,6 +119,8 @@ menuOpen = true
 
 }
 
+/* SIGNAL ENGINE */
+
 function generateSignal(){
 
 document.getElementById("loadingBox")
@@ -132,14 +136,43 @@ setTimeout(() => {
 let pair =
 document.getElementById("pairSelect").value
 
-/* MARKET MOOD */
+/* TREND ENGINE */
 
-let marketMood =
+let trend =
+localStorage.getItem("marketTrend")
+
+if(!trend){
+
+trend = "CALL"
+
+}
+
+/* TREND CHANGE */
+
+let trendChance =
 Math.floor(Math.random()*100)
+
+if(trendChance > 75){
+
+trend =
+trend === "CALL"
+? "PUT"
+: "CALL"
+
+}
+
+/* SAVE TREND */
+
+localStorage.setItem(
+"marketTrend",
+trend
+)
+
+/* SIGNAL */
 
 let signal = ""
 
-if(marketMood > 55){
+if(trend === "CALL"){
 
 signal = "🟢 CALL"
 
@@ -149,22 +182,6 @@ signal = "🔴 PUT"
 
 }
 
-/* ANTI REPEAT */
-
-let lastSignal =
-localStorage.getItem("lastSignal")
-
-if(lastSignal === signal){
-
-signal =
-signal === "🟢 CALL"
-? "🔴 PUT"
-: "🟢 CALL"
-
-}
-
-localStorage.setItem("lastSignal",signal)
-
 /* CONFIDENCE */
 
 let confidence = 0
@@ -172,16 +189,16 @@ let confidence = 0
 if(signal === "🟢 CALL"){
 
 confidence =
-Math.floor(Math.random()*10)+86
+Math.floor(Math.random()*8)+88
 
 }else{
 
 confidence =
-Math.floor(Math.random()*10)+82
+Math.floor(Math.random()*8)+84
 
 }
 
-/* UI UPDATE */
+/* UI */
 
 document.getElementById("signalText")
 .innerHTML = signal
@@ -233,6 +250,8 @@ document.querySelector(".signal-box")
 },2000)
 
 }
+
+/* NAVIGATION */
 
 function showTab(tab){
 
