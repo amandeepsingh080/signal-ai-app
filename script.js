@@ -1,5 +1,6 @@
 window.onload = function(){
-
+console.log("APP STARTED")
+  
 let loggedIn =
 localStorage.getItem("loggedIn")
 
