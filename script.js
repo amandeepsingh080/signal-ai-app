@@ -1,6 +1,7 @@
 window.onload = function(){
+
 console.log("APP STARTED")
-  
+
 let loggedIn =
 localStorage.getItem("loggedIn")
 
@@ -11,6 +12,30 @@ document.getElementById("loginScreen")
 
 document.getElementById("mainApp")
 .style.display = "block"
+
+let savedName =
+localStorage.getItem("username")
+
+let savedId =
+localStorage.getItem("quotexid")
+
+if(document.getElementById("profileName")){
+
+document.getElementById("profileName")
+.innerHTML = savedName
+
+}
+
+if(document.getElementById("profileId")){
+
+document.getElementById("profileId")
+.innerHTML = savedId
+
+}
+
+}
+
+}
 
 function loginApp(){
 
@@ -45,13 +70,27 @@ localStorage.setItem("loggedIn","true")
 
 localStorage.setItem("username",username)
 
-localStorage.setItem("quotexid",quotexid) 
+localStorage.setItem("quotexid",quotexid)
 
 document.getElementById("loginScreen")
 .style.display = "none"
 
 document.getElementById("mainApp")
 .style.display = "block"
+
+if(document.getElementById("profileName")){
+
+document.getElementById("profileName")
+.innerHTML = username
+
+}
+
+if(document.getElementById("profileId")){
+
+document.getElementById("profileId")
+.innerHTML = quotexid
+
+}
 
 }
 
@@ -62,14 +101,6 @@ function openMenu(){
 let sidebar =
 document.getElementById("sidebar")
 
-document.getElementById("profileName")
-.innerHTML =
-username
-
-document.getElementById("profileId")
-.innerHTML =
-quotexid
-  
 if(menuOpen){
 
 sidebar.style.left = "-280px"
@@ -179,11 +210,13 @@ behavior:"smooth"
 })
 
 }
-}
 
 if(tab === "VIP"){
 
-alert("💎 VIP ACCESS COMING SOON 🚀")
+document.querySelector(".vip-box")
+.scrollIntoView({
+behavior:"smooth"
+})
 
 }
 
