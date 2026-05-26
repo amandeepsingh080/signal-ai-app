@@ -308,3 +308,34 @@ font-size:36px;
 }
 
 }
+
+.profile-box,
+.vip-box{
+margin-top:25px;
+background:#081427;
+padding:20px;
+border-radius:20px;
+}
+
+.profile-box h3,
+.vip-box h3{
+margin-top:0;
+color:#38bdf8;
+}
+
+.profile-card p,
+.vip-card p{
+background:rgba(255,255,255,0.05);
+padding:14px;
+border-radius:12px;
+margin-top:12px;
+}
+
+.vip-btn{
+margin-top:20px;
+background:linear-gradient(
+90deg,
+#9333ea,
+#7c3aed
+);
+}
