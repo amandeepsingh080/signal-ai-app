@@ -103,7 +103,7 @@ document.getElementById("sidebar")
 
 if(menuOpen){
 
-sidebar.style.left = "-280px"
+sidebar.style.left = "-260px"
 
 menuOpen = false
 
@@ -127,13 +127,61 @@ document.querySelector(".signal-box")
 
 setTimeout(() => {
 
-let signals = ["🟢 CALL","🔴 PUT"]
+/* PAIR */
 
-let signal =
-signals[Math.floor(Math.random()*signals.length)]
+let pair =
+document.getElementById("pairSelect").value
 
-let confidence =
-Math.floor(Math.random()*15)+80
+/* MARKET MOOD */
+
+let marketMood =
+Math.floor(Math.random()*100)
+
+let signal = ""
+
+if(marketMood > 55){
+
+signal = "🟢 CALL"
+
+}else{
+
+signal = "🔴 PUT"
+
+}
+
+/* ANTI REPEAT */
+
+let lastSignal =
+localStorage.getItem("lastSignal")
+
+if(lastSignal === signal){
+
+signal =
+signal === "🟢 CALL"
+? "🔴 PUT"
+: "🟢 CALL"
+
+}
+
+localStorage.setItem("lastSignal",signal)
+
+/* CONFIDENCE */
+
+let confidence = 0
+
+if(signal === "🟢 CALL"){
+
+confidence =
+Math.floor(Math.random()*10)+86
+
+}else{
+
+confidence =
+Math.floor(Math.random()*10)+82
+
+}
+
+/* UI UPDATE */
 
 document.getElementById("signalText")
 .innerHTML = signal
@@ -145,6 +193,26 @@ document.getElementById("confidenceText")
 document.getElementById("expiryText")
 .innerHTML =
 "Expiry: 1 Minute"
+
+if(document.getElementById("pairText")){
+
+document.getElementById("pairText")
+.innerHTML = pair
+
+}
+
+/* HISTORY */
+
+if(document.getElementById("historyList")){
+
+document.getElementById("historyList")
+.innerHTML += `
+<p>${pair} → ${signal}</p>
+`
+
+}
+
+/* HIDE LOADER */
 
 document.getElementById("loadingBox")
 .style.display = "none"
@@ -171,7 +239,7 @@ function showTab(tab){
 let sidebar =
 document.getElementById("sidebar")
 
-sidebar.style.left = "-280px"
+sidebar.style.left = "-260px"
 
 menuOpen = false
 
