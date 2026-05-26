@@ -12,18 +12,6 @@ document.getElementById("loginScreen")
 document.getElementById("mainApp")
 .style.display = "block"
 
-document.getElementById("profileName")
-.innerHTML =
-localStorage.getItem("username")
-
-document.getElementById("profileId")
-.innerHTML =
-localStorage.getItem("quotexid")
-  
-}
-
-}
-
 function loginApp(){
 
 let username =
@@ -74,6 +62,14 @@ function openMenu(){
 let sidebar =
 document.getElementById("sidebar")
 
+document.getElementById("profileName")
+.innerHTML =
+username
+
+document.getElementById("profileId")
+.innerHTML =
+quotexid
+  
 if(menuOpen){
 
 sidebar.style.left = "-280px"
